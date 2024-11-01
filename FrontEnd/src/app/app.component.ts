@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { ListingsPageComponent } from "./listings-page/listings-page.component";
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
+ 
 
 
 @Component({
