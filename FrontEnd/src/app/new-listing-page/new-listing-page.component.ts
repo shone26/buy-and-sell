@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { ListingDataFormComponent } from "../listing-data-form/listing-data-form.component";
 
 @Component({
   selector: 'app-new-listing-page',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, ListingDataFormComponent],
   templateUrl: './new-listing-page.component.html',
   styleUrl: './new-listing-page.component.css'
 })
