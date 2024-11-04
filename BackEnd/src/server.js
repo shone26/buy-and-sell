@@ -1,4 +1,5 @@
 import Hapi from '@hapi/hapi';
+import routes from './routes';
 
 const start = async () => {
     const server = Hapi.server({
@@ -6,25 +7,11 @@ const start = async () => {
         host: 'localhost',
     });
 
-    server.route({
-        method: 'GET',
-        path: '/hello',
-        handler: (req, h) => {
-            return 'Hello!';
-        }
-    });
-
-    server.route({
-        method: 'Get',
-        path: '/kawadabn',
-        handler: (req, h) => {
-            return 'හුත්තක් කෑවා'
-        }
-    })
+    routes.forEach(route => server.route(route));
 
     await server.start();
     console.log(`Server is listening on ${server.info.uri}`);
-}
+}   
 
 process.on('unhandledRejection', err => {
     console.log(err);
